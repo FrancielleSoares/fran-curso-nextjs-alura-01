@@ -1,6 +1,6 @@
-import Head from 'next/head'
-import { useEffect, useState } from 'react';
-import Link from '../src/components/Link';
+
+import FAQScreen from '../src/screens/FAQScreen';
+export default FAQScreen; 
 
 export async function getStaticProps() {
     console.log('Rodando no build')
@@ -19,32 +19,4 @@ export async function getStaticProps() {
         faq,
       }, 
     };
-}
-
-export default function FAQPage({ faq }) {
-    //console.log(faq);
-    // const [faq, setFaq] = useState([]);
-    // useEffect(() => {
-    // }, []);
- 
-
-    return (
-        <div>
-            <Head>
-                <title>FAQ - Alura Cases Campanha</title>
-            </Head>
-            <h1>Alura Cases - Página de Perguntas FAQ</h1>
-            <Link href="/">Ir para a Home</Link>
-            <ul>
-                {faq.map(({ answer, question }) => (
-                 <li key={question}>
-                    <article>
-                        <h2>{question}</h2>
-                        <p>{answer}</p>
-                    </article>
-                 </li>
-                 ))}
-            </ul>
-        </div>
-    )
 }
